@@ -7,7 +7,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>TEST!!!</h1>
+        <h1>This is react header</h1>
+        <h1>This is another header</h1>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
