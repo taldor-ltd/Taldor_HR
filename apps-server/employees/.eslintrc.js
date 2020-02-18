@@ -17,6 +17,7 @@ module.exports = {
   rules: {
     'no-console': 'off',
     'comma-dangle' : 'off',
-    'prefer-template' : 'off'
+    'prefer-template' : 'off',
+    'max-len': 'off'
   },
 };
