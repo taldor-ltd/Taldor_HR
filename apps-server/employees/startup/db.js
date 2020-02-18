@@ -1,10 +1,10 @@
+/* eslint-disable */
 const { Sequelize } = require('sequelize');
 require('sequelize-hierarchy')(Sequelize);
 
 const sp = require('./db-stored-functions');
 
 const db = {};
-
 
 
 const host = process.env.DB_HOST;
@@ -23,7 +23,7 @@ const files = fs.readdirSync('./models');
 const models = [];
 files.forEach((file) => {
   if (file.includes('.js')) {
-    models.push(require(`../models/${file}`));
+    models.push(require(`../models/${file}`)); 
   }
 });
 // Initialize models
@@ -52,12 +52,12 @@ Object.keys(db).forEach((modelName) => {
 });
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
-db.function = (fnName, args) => {
+db.function = (fnName, ...args) => {
   let b = `select * from hr.${fnName}(`;
 
   if (!Array.isArray(args)) {
     // eslint-disable-next-line no-param-reassign
-    args = [args];
+    args = [...args];
   }
 
   args.forEach((a) => {
