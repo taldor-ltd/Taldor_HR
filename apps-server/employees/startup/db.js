@@ -19,11 +19,11 @@ const sequelize = new Sequelize(`postgres://${user}:${pass}@${host}`, {
 
 const fs = require('fs');
 
-const files = fs.readdirSync('./models');
+const files = fs.readdirSync('./models/db');
 const models = [];
 files.forEach((file) => {
   if (file.includes('.js')) {
-    models.push(require(`../models/${file}`)); 
+    models.push(require(`../models/db/${file}`)); 
   }
 });
 // Initialize models
