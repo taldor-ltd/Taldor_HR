@@ -1,7 +1,11 @@
 const { Sequelize } = require('sequelize');
 require('sequelize-hierarchy')(Sequelize);
 
+const sp = require('./db-stored-functions');
+
 const db = {};
+
+
 
 const host = process.env.DB_HOST;
 const user = process.env.DB_USER;
@@ -88,5 +92,9 @@ db.employee.belongsTo(db.user, { foreignKey: 'employeeId' });
 db.project.belongsToMany(db.skill, { through: { model: 'project_skill', unique: false }, foreignKey: 'project_id' });
 db.skill.belongsToMany(db.project, { through: { model: 'project_skill', unique: false }, foreignKey: 'skill_id' });
 
+db.sp = sp;
+for (const i in db.sp) {
+  db.sp[i] = db.function.bind(this, sp[i]);
+}
 
 module.exports = db;

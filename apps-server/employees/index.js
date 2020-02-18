@@ -1,5 +1,5 @@
+/* eslint-disable max-len */
 /* eslint-disable prefer-template */
-const { DataTypes } = require('sequelize');
 require('./startup/config');
 const db = require('./startup/db');
 
@@ -32,4 +32,8 @@ db.sequelize.authenticate()
 //   }
 // }).then((e) => console.log('\n' + JSON.stringify(e)));
 
-db.function('fn_user_get_login_details', ['admin']).then(([results, meta]) => console.log('\n' + JSON.stringify(results)));
+// db.function('fn_user_get_login_details', 'admin').then(([results, meta]) => console.log('\n' + JSON.stringify(results)));
+
+const userName = 'admin';
+
+db.sp.userGetLoginDetails(userName).then(([[user], metaData]) => console.log('\n' + JSON.stringify(user)));
