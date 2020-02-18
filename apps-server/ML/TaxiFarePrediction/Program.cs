@@ -16,7 +16,7 @@ namespace TaxiFarePrediction
 
         private static string BaseModelsRelativePath = @"../../../../MLModels";
         private static string ModelRelativePath = $"{BaseModelsRelativePath}/MLModel.zip";
-
+        // comment
         private static string ModelPath = GetAbsolutePath(ModelRelativePath);
 
         static void Main(string[] args)
@@ -32,6 +32,7 @@ namespace TaxiFarePrediction
             // 2. Load data from postgreSQL
             string connectionString = @;
             string commandText = "SELECT * FROM iris";
+
 
 
             // 3. Add data transformations
