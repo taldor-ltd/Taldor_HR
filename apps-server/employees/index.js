@@ -37,3 +37,13 @@ db.sequelize.authenticate()
 const userName = 'admin';
 
 db.sp.userGetLoginDetails(userName).then(([[user], metaData]) => console.log('\n' + JSON.stringify(user)));
+
+
+// db.user.findAll({
+//   where: {
+//     userId: 1
+//   }
+// }).then((result) => {
+//   console.log('\n\n\n\n');
+//   console.log(JSON.stringify(result));
+// });
