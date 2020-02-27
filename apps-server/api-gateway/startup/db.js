@@ -80,18 +80,6 @@ db.function = (fnName, ...args) => {
   return db.sequelize.query(b);
 };
 
-
-db.skill.isHierarchy();
-
-db.employee.belongsToMany(db.skill, { through: 'employeeSkill', foreignKey: 'employeeId' });
-db.skill.belongsToMany(db.employee, { through: 'employeeSkill', foreignKey: 'skillId' });
-
-db.user.hasOne(db.employee, { foreignKey: 'employeeId' });
-db.employee.belongsTo(db.user, { foreignKey: 'employeeId' });
-
-db.project.belongsToMany(db.skill, { through: { model: 'project_skill', unique: false }, foreignKey: 'project_id' });
-db.skill.belongsToMany(db.project, { through: { model: 'project_skill', unique: false }, foreignKey: 'skill_id' });
-
 db.sp = sp;
 for (const i in db.sp) {
   db.sp[i] = db.function.bind(this, sp[i]);

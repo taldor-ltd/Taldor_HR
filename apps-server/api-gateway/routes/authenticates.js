@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const db = require('../startup/db');
 
 router.route("/login").post((req, res) => {
     // const user = {

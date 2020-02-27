@@ -1,17 +1,24 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const dotenv = require('dotenv');
+require('./startup/config');
+const db = require('./startup/db');
 
 const app = express();
 const authenticatesRouter = require("./routes/authenticates");
 
-
-dotenv.config();
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.json());
+
+
+db.sequelize.authenticate()
+  .then(() => {
+    console.log('Connection to DB has been established successfully.');
+  })
+  .catch((err) => {
+    console.error('Unable to connect to the db: ', err);
+  });
 
 
 // app.use(
