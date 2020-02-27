@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom'
 
 export default class Login extends BaseComponent {
     constructor(props) {
-        debugger;
+        // debugger;
         super(props);
 
         // reset login status
@@ -36,9 +36,10 @@ export default class Login extends BaseComponent {
     login(username, password) {
         loginService.login(username, password).then(data => {
             //   notify = () => this.toastId = toast("Hello", { autoClose: false });
-            alert('login successfully');
+            //alert('login successfully');
+            alert(JSON.stringify(data));
             localStorage.setItem('user', JSON.stringify(data));
-            debugger;
+            // debugger;
             this.props.history.push('/Dashboard')
         }).catch((reason) => {
             return 'Error'
