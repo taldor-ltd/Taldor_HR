@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import "./styles.css";
+import 'primereact/resources/themes/nova-light/theme.css';
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
+import SideBar from "./templates/Sidebar";
+import {
+  BrowserRouter as Router, Route, Link,
+  Switch,
+  Redirect
+} from "react-router-dom";
+import Login from "./components/_login/Login";
+import Dashboard from "./components/_dashboard/Dashboard";
+import AppRoute from './appRoute';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import MainLayout from './templates/MainLayout'
+import LoginLayout from './templates/LoginLayout'
+
+class App extends React.Component {
+
+  render() {
+
+    return (
+        <Router>
+          <div className="App">
+            <Switch>
+              <AppRoute exact path='/' component={Login} layout ={LoginLayout}/>
+              <AppRoute path='/Dashboard' component={Dashboard} layout ={MainLayout}/>
+            </Switch>
+          </div>
+        </Router> 
+    );
+  }
 }
 
 export default App;
