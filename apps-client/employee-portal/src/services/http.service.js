@@ -11,13 +11,14 @@ const httpOptions = {
 
 const httpPostUrl = "https://jsonplaceholder.typicode.com/posts";
 const httpGetUrl = "https://jsonplaceholder.typicode.com/posts?userId=1";
-const bodyParams = JSON.stringify({ title: 'foo', body: 'bar', userId: 1 });
+//const bodyParams = JSON.stringify({ title: 'foo', body: 'bar', userId: 1 });
+//const bodyParams = //JSON.stringify({ title: 'foo', body: 'bar', userId: 1 });
 
 function post(url, requestData) {
 
   let data = fetch(httpPostUrl, {
     method: 'POST', headers: httpOptions,
-    body: bodyParams
+    body: requestData
   })
     .then((response) => response.json())
     .then(data => {

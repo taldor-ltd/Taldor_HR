@@ -5,7 +5,7 @@ export const loginService = {
     logout,
 };
 
-const apiUrl = 'login';
+const apiUrl = 'http://localhost/authenticate/login';
 
 function login(username, password) {
     const dataLogin = { username: username, password: password };
