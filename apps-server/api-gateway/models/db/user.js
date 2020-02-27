@@ -2,46 +2,55 @@
 
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('user', {
-    user_id: {
+    userId: {
       type: DataTypes.BIGINT,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      field: 'user_id'
     },
-    user_name: {
+    userName: {
       type: DataTypes.STRING,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      field: 'user_name'
     },
-    user_hash_password: {
+    userHashPassword: {
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: false,
+      field: 'user_hash_password'
     },
-    employee_id: {
+    employeeId: {
       type: DataTypes.BIGINT,
       allowNull: true,
-      primaryKey: true
+      primaryKey: true,
+      field: 'employee_id'
     },
-    is_active: {
+    isActive: {
       type: DataTypes.BOOLEAN,
-      allowNull: false
+      allowNull: false,
+      field: 'is_active'
     },
-    created_user_id: {
+    createdUserId: {
       type: DataTypes.BIGINT,
       allowNull: true,
-      primaryKey: true
+      primaryKey: true,
+      field: 'created_user_id'
     },
-    created_date: {
+    createdDate: {
       type: DataTypes.DATE,
-      allowNull: true
+      allowNull: true,
+      field: 'created_date'
     },
-    updated_user_id: {
+    updatedUserId: {
       type: DataTypes.BIGINT,
       allowNull: true,
-      primaryKey: true
+      primaryKey: true,
+      field: 'updated_user_id'
     },
-    updated_date: {
+    updatedDate: {
       type: DataTypes.DATE,
-      allowNull: true
+      allowNull: true,
+      field: 'updated_date'
     }
   }, {
     tableName: 'user',
