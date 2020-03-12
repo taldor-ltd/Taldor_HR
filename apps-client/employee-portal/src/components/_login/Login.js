@@ -1,11 +1,11 @@
 import React from "react";
 import { loginService } from "../../services/login.service";
 import { BaseComponent } from "../baseComponent/BaseComponent";
-import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom';
+import {zetaLogger} from "../../services/zeta_logger.service";
 
 export default class Login extends BaseComponent {
     constructor(props) {
-        // debugger;
         super(props);
 
         // reset login status
@@ -49,6 +49,7 @@ export default class Login extends BaseComponent {
                     }
                 });
         }).catch((reason) => {
+            zetaLogger.post('roi');
             return reason.message;
         });
     }
@@ -57,31 +58,62 @@ export default class Login extends BaseComponent {
         const { username, password, submitted } = this.state;
 
         return (
-            <div className="auth-wrapper">
-                <div className="auth-inner">
-                    <h2>התחברות</h2>
-                    <form name="form" onSubmit={this.handleSubmit}>
-                        <div className={'form-group' + (submitted && !username ? ' has-error' : '')}>
-                            <label htmlFor="username">שם משתמש</label>
-                            <input type="text" className="form-control" name="username" value={username} onChange={this.handleChange} />
-                            {submitted && !username &&
-                                <div className="help-block">שדה חובה</div>
-                            }
-                        </div>
-                        <div className={'form-group' + (submitted && !password ? ' has-error' : '')}>
-                            <label htmlFor="password">סיסמא</label>
-                            <input type="password" className="form-control" name="password" value={password} onChange={this.handleChange} />
-                            {submitted && !password &&
-                                <div className="help-block">שדה חובה</div>
-                            }
-                        </div>
-                        <div className="form-group">
-                            <button className="btn btn-primary float-right">התחבר</button>
-                            {/* <button onClick={this.notify}>Notify</button> */}
-                        </div>
-                    </form>
-                </div>
+
+<div class="middle-box text-center loginscreen animated fadeInDown">
+        <div>
+            <div>
+
+                <h1 class="logo-name">HR</h1>
+
             </div>
-        );
-    }
-}
+            <h3>ברוכים הבאים לפורטל עובדים</h3>
+            <p>קצת מידע
+            </p>
+            <form className="m-t" name="form" onSubmit={this.handleSubmit}>
+                         <div className={'form-group' + (submitted && !username ? ' has-error' : '')}>
+                                     <input type="text" className="form-control" placeholder="שם משתמש"  name="username" value={username} onChange={this.handleChange} />
+                                     {submitted && !username &&
+                                         <div className="help-block">שדה חובה</div>
+                                    }
+                                 </div>
+                         <div className={'form-group' + (submitted && !password ? ' has-error' : '')}>
+                                     <input type="password" className="form-control" placeholder="סיסמא" name="password" value={password} onChange={this.handleChange} />
+                                     {submitted && !password &&
+                                         <div className="help-block">שדה חובה</div>
+                                     }
+                                 </div>
+                         <button type="submit" class="btn btn-primary block full-width m-b">התחבר</button>
+                     </form> 
+        </div>
+    </div>
+
+// {/* 
+//                     <div className="auth-wrapper">
+//                         <div className="auth-inner">
+//                             <h2>התחברות</h2>
+//                             <form name="form" onSubmit={this.handleSubmit}>
+//                                 <div className={'form-group' + (submitted && !username ? ' has-error' : '')}>
+//                                     <label htmlFor="username">שם משתמש</label>
+//                                     <input type="text" className="form-control" name="username" value={username} onChange={this.handleChange} />
+//                                     {submitted && !username &&
+//                                         <div className="help-block">שדה חובה</div>
+//                                     }
+//                                 </div>
+//                                 <div className={'form-group' + (submitted && !password ? ' has-error' : '')}>
+//                                     <label htmlFor="password">סיסמא</label>
+//                                     <input type="password" className="form-control" name="password" value={password} onChange={this.handleChange} />
+//                                     {submitted && !password &&
+//                                         <div className="help-block">שדה חובה</div>
+//                                     }
+//                                 </div>
+//                                 <div className="form-group">
+//                                     <button className="btn btn-primary float-right">התחבר</button>
+//                                 </div>
+//                             </form>
+//                         </div>
+//                     </div> */}
+//                     </div>
+
+                    );
+                }
+            }

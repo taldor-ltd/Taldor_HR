@@ -10,7 +10,8 @@ export default class Header extends  React.Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav " />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="#link">יציאה</Nav.Link>
+                     
+                        <Nav.Link href="#link"><i className="fa fa-sign-out"></i>  יציאה </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

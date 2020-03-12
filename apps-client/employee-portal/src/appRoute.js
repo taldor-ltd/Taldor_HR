@@ -3,10 +3,8 @@ import {Route} from 'react-router'
 
 const AppRoute = ({component : Component , layout: Layout , ...rest}) => (
 
-  <Route
-  {...rest}
-  render = {props => (
-    <Layout>
+  <Route {...rest} render = {props => (
+    <Layout {...props} >
       <Component {...props} />
     </Layout>
   )}

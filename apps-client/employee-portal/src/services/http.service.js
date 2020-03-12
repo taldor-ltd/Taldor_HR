@@ -16,16 +16,9 @@ function post(action, requestData) {
 }
 
 function get(action) {
-  let data = fetch(apiUrl + action, {
+ return fetch(apiUrl + action, {
     method: 'GET',
     headers: httpOptions,
-  })
-    .then((response) => response.json())
-    .then(data => {
-      return data;
-    }).catch((response) => {
-      return 'Error'
-    });
-  return data;
+  });
 }
 

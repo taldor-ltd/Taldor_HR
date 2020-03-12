@@ -3,6 +3,8 @@
 html,
 body {
   margin: 0;
+  direction: rtl;
+  text-align: right !important;
 }
 
 #App {
@@ -127,16 +129,31 @@ body {
 .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo {
   float: right !important;
   margin-right: unset !important;
-
-}
-.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo {
-
 }
 
+.sidenav---sidenav-navitem---uwIJ- .sidenav---selected---1EK3y .sidenav---highlighted---oUx9u {
+  color: #ffffff !important;
+}
+.sidenav---sidenav-navitem---uwIJ{
+  color: #D3D3D3 !important;
+}
 
 .sidenav---sidenav-subnav---1EN61 {
   left: unset !important;
   right: 64px !important;
+}
+
+.sidenav---navtext---1AE_f{
+  padding-right: 30%;
+}
+
+
+.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo{
+  color: lightgray !important;
+}
+
+.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navtext---1AE_f {
+  color: lightgray !important;
 }
 
 
@@ -151,6 +168,40 @@ body {
 /* Main Container */
 .mainContainer{
   width: 96%;
-
   height: 783px;
+}
+
+
+/* list */
+
+.list-unstyled {
+  padding-right: 0;
+}
+
+
+.appExpanded + #page-wrapper {
+  width: calc(100% - 70px) !important;
+  margin-right: 144px !important;
+}
+
+
+/* footer */
+
+.text-footer{
+  background-color: #f8f9fa !important;
+  border-top: 1px solid #E7E7E7;
+  text-align:  center;
+  padding:  20px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: 57px;
+  width: 100%;
+}
+
+.footer{
+  display: block;
+  padding: 20px;
+  height: 56px;
+  width: 100%;
 }
