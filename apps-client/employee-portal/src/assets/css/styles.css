@@ -1,0 +1,207 @@
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+html,
+body {
+  margin: 0;
+  direction: rtl;
+  text-align: right !important;
+}
+
+#App {
+  font-family: sans-serif;
+
+  /* Give app full page to work with */
+  height: 100vh;
+}
+
+#page-wrap {
+  text-align: center;
+
+  /* Prevent sidebar from showing a scrollbar on page */
+  overflow: auto;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+
+  /* Our sidebar item styling */
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: #d1d1d1;
+  transition: color 0.2s;
+}
+
+/* Change color on hover */
+.bm-item:hover {
+  color: white;
+}
+
+.menu-item {
+ direction: rtl !important;
+}
+
+/* The rest copied directly from react-burger-menu docs */
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  right: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+  direction: rtl;
+}
+
+.bm-item-list{
+  text-align: right;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.help-block {
+  color: red;
+}
+
+
+
+/* sideNav */
+.sidenav---sidenav---_2tBP{
+  background: #2F4050 !important;
+  top: 6% !important;
+  bottom: 6% !important;
+  left: unset !important;
+  right: 0 !important;
+  min-width: 72px !important;
+}
+
+.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL {
+  min-width: 240px !important;
+}
+
+
+.sidenav---sidenav-toggle---1KRjR {
+  float: right !important;
+}
+
+.sidenav---sidenav-nav---3tvij{
+  float: right !important;
+  text-align: right !important;
+}
+
+
+.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo {
+  float: right !important;
+  margin-right: unset !important;
+}
+
+.sidenav---sidenav-navitem---uwIJ- .sidenav---selected---1EK3y .sidenav---highlighted---oUx9u {
+  color: #ffffff !important;
+}
+.sidenav---sidenav-navitem---uwIJ{
+  color: #D3D3D3 !important;
+}
+
+.sidenav---sidenav-subnav---1EN61 {
+  left: unset !important;
+  right: 64px !important;
+}
+
+.sidenav---navtext---1AE_f{
+  padding-right: 30%;
+}
+
+
+.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo{
+  color: lightgray !important;
+}
+
+.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navtext---1AE_f {
+  color: lightgray !important;
+}
+
+
+/* Top NavBar */
+.rightNavBar {
+  direction: rtl;
+}
+.navbar-brand {
+  margin-right: unset;
+  }
+
+/* Main Container */
+.mainContainer{
+  width: 96%;
+  height: 783px;
+}
+
+
+/* list */
+
+.list-unstyled {
+  padding-right: 0;
+}
+
+
+.appExpanded + #page-wrapper {
+  width: calc(100% - 70px) !important;
+  margin-right: 144px !important;
+}
+
+
+/* footer */
+
+.text-footer{
+  background-color: #f8f9fa !important;
+  border-top: 1px solid #E7E7E7;
+  text-align:  center;
+  padding:  20px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: 57px;
+  width: 100%;
+}
+
+.footer{
+  display: block;
+  padding: 20px;
+  height: 56px;
+  width: 100%;
+}
