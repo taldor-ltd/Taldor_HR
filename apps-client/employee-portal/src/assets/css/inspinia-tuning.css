@@ -1,0 +1,59 @@
+.m-t-lg {
+  margin-top: 29px !important;
+}
+
+.wrapper-content {
+  padding: 0px 95px 0px 32px !important;
+}
+
+.vertical-timeline-icon {
+  right: 0 !important;
+  left:unset !important;
+}
+
+.vertical-timeline-content{
+  margin-right: 60px !important;
+  margin-left: unset !important;
+}
+
+.vertical-timeline-icon i {
+  left: -15% !important;
+}
+
+.vertical-timeline-content::before {
+  left: 100% !important;
+  border-left: 7px solid white !important;
+  border-right: unset;
+}
+
+#vertical-timeline::before {
+  right: 18px !important;
+  left: unset
+}
+
+.dl, ol, ul {
+  margin-top: 0;
+  margin-bottom: 0rem;
+}
+
+.table{
+  margin-bottom: -5px !important;
+}
+
+
+.m-r-sm {
+  margin-left: 10px !important;
+}
+
+.vertical-timeline-content .btn {
+  float: left !important;
+}
+
+.vertical-timeline-content .vertical-date {
+  float: right !important;
+}
+
+/* 
+body.mini-navbar #page-wrapper {
+  width: calc(100% - 70px) !important;
+} */
