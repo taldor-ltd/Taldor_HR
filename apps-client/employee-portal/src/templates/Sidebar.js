@@ -1,66 +1,87 @@
 import React, { Component } from 'react';
 import SideNav, { Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-import '../styles.css';
+import { Link } from 'react-router-dom';
 
-export default props => {
-    return (
-        <SideNav
+class Sidebar extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    state = {
+        selected: 'home',
+        expanded: false
+    };
+
+    render() {
+        return (
+            <div className={(this.state.expanded ? 'appExpanded' : '')}>
+            <SideNav
             onSelect={(selected) => {
-                // Add your code here
-            }}
-        >
-            <SideNav.Toggle />
-            <SideNav.Nav defaultSelected="home">
-                <NavItem eventKey="home">
-                    <NavIcon>
-                        <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
-                    </NavIcon>
-                    <NavText>
-                        בית
+                    this.setState({ selected: selected });
+                    let pageRoute = '/' + selected;
+                    this.props.props.history.push(pageRoute);
+                }}
+                onToggle = {(expanded) => {
+                    this.setState({ expanded: expanded });
+                }
+            }
+            >
+                <SideNav.Toggle />
+                <SideNav.Nav defaultSelected="Dashboard">
+                    <NavItem eventKey="Dashboard">
+                        <NavIcon>
+                       <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+                        </NavIcon>
+                        <NavText>
+                            בית
             </NavText>
-                </NavItem>
+                    </NavItem>
 
-                <NavItem eventKey="profile">
-                    <NavIcon>
-                        <i className="fa fa-fw fa-address-card" style={{ fontSize: '1.75em' }} />
-                    </NavIcon>
-                    <NavText>
+                    <NavItem eventKey="ProfileContact">
+                        <NavIcon>
+                      <i className="fa fa-fw fa-address-card" style={{ fontSize: '1.75em' }} />
+                        </NavIcon>
+                        <NavText>
                         פרופיל אישי
+                           
             </NavText>
-                </NavItem>
-
-
-                <NavItem eventKey="users">
-                    <NavIcon>
-                        <i className="fa fa-fw fa-users" style={{ fontSize: '1.75em' }} />
-                    </NavIcon>
-                    <NavText>
-                        עובדים
-            </NavText>
-                    <NavItem eventKey="charts/linechart">
-                        <NavText>
-                            ספר טלפונים
-                </NavText>
                     </NavItem>
-                    <NavItem eventKey="charts/barchart">
+
+                    <NavItem eventKey="employees">
+                        <NavIcon>
+                            <i className="fa fa-fw fa-users" style={{ fontSize: '1.75em' }} />
+                        </NavIcon>
                         <NavText>
-                            עובדים 2
-                </NavText>
-                    </NavItem>
-                </NavItem>
-
-                <NavItem eventKey="management">
-                    <NavIcon>
-                        <i className="fa fa-fw fa-cogs" style={{ fontSize: '1.75em' }} />
-                    </NavIcon>
-                    <NavText>
-                        ניהול
+                            עובדים
             </NavText>
-                </NavItem>
+                        <NavItem eventKey="charts/linechart">
+                            <NavText>
+                                ספר טלפונים
+                </NavText>
+                        </NavItem>
+                        <NavItem eventKey="charts/barchart">
+                            <NavText>
+                                עובדים 2
+                </NavText>
+                        </NavItem>
+                    </NavItem>
+
+                    <NavItem eventKey="management">
+                        <NavIcon>
+                            <i className="fa fa-fw fa-cogs" style={{ fontSize: '1.75em' }} />
+                        </NavIcon>
+                        <NavText>
+                            ניהול
+            </NavText>
+                    </NavItem>
 
 
-            </SideNav.Nav>
-        </SideNav>
-    );
+                </SideNav.Nav>
+            </SideNav>
+            </div>
+        );
+    }
 };
+
+export default Sidebar;

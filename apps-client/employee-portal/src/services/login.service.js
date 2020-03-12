@@ -5,11 +5,9 @@ export const loginService = {
     logout,
 };
 
-const apiUrl = 'http://localhost/authenticate/login';
-
 function login(username, password) {
     const dataLogin = { username: username, password: password };
-    return httpService.post(apiUrl, dataLogin);
+    return httpService.post("authenticates/login", dataLogin);
 }
 
 function logout() {
